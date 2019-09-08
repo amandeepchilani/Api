@@ -1,0 +1,32 @@
+
+
+<html>
+<form action="logdin.php" method="post">
+<h1>LOGIN FORM</h1>
+<label>NAME:</label><input type="text" name="name"/><br>
+<label>PASSWORD:</label><input type="text" name="pass"/><br>
+<input type="Submit" name="submit">
+</html>
+<?php
+session start();
+mysqli_connect("localhost","root","");
+mysql_select_db("women_safty");
+if(isset($REQUEST["submit"]))
+{
+$user=$_Request["name"];
+$pass=$_Request["pass"];
+$query=mysql_query("select * from registerform where username='$user' &&  password='$pass'");
+$rowcount=mysql_num_rows($query);
+if(rowcount==true)
+{
+echo " your username and password is correct";
+}
+else
+{
+echo " not correct";
+}
+}
+
+
+
+?>

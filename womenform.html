@@ -1,0 +1,85 @@
+<html>
+ <head>
+ <title>inset records</title>
+ <style>
+ body{
+ background-image:url("womaniya.png");
+ }
+ table, th,td,{
+ border:3px solid purple;
+ border-collapse:collapse;
+ text-size:20px;
+ color:#660033;
+ }
+ td{
+ text-decoration:underline black;
+ }
+ td{
+ padding-top:.5em;
+ padding-bottomL.5em;
+ }
+ p{
+ color: #660033;
+ font-size: 20px;
+ text-align: center;
+ font-weight:bold;
+ }
+ marquee{
+ font-size:50px;
+ }
+ </style>
+ <script>
+ function validation(){
+ var x=document.womaniya.adharcard.value;
+ var y=document.womaniya.rating.value;
+ if(x=="")
+ {
+ alert("adharCard is mendatory");
+ return false;
+ 
+ }
+ if (x.length!=12)
+ {
+ alert ("invalide adhar card length");
+ return false;
+ }
+ 
+ if(y=="")
+ {
+ alert("rating is mandatory");
+ return false;
+ 
+ }
+ }
+
+ </script>
+ </head>
+ <body >
+ <marquee direction="left" width="100%" bgcolor="red" height="12%">Welcome-user</marquee>
+ <p> hello subscriber,<br>
+ here we want to know about how u think the area was<br> save for women just give some information which<br> help us know about thge area</p>
+ <form name="womaniya" action="connection.php" method="post" onsubmit="return validation()">
+ <table align="center">
+ <tr>
+ <td>Enter your adharcard number</td>
+ <td><input type="text" name="adharcard"  ></td>
+ </tr>
+ <tr>
+ <td>what your name firstname?(optional)</td>
+ <td><input type="text" name="name" ></td>
+ </tr>
+ <tr>
+ <td> what your age?</td>
+ <td><input type="text" name="age"></td></tr>
+ <tr>
+ <td>how you think about ther area is safe for women*?</td>
+ <td><input type="text" name="rating"  required></td>
+ </tr>
+ <tr>
+ <td><input type="submit" name="submit"></td>
+ </tr>
+ </table>
+ </form>
+ </body>
+ </html>
+ 
